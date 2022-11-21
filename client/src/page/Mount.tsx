@@ -13,7 +13,7 @@ const useMount = (id:string | undefined) => {
     const [oneMount, setOneMount] = useState<mountModel | null>(null)
   
     const getMount = async () => {
-        const response = await fetch(`https://fr.dofus.dofapi.fr/mounts/${id}`)
+        const response = await fetch(`http://localhost:3001/api/get/${id}`)
         const data: mountModel = await response.json()
         setOneMount(data)
     }
