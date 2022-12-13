@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { mountModel } from '../interfaces/mountModel';
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios';
+import './mounts.css'
 
 export const useMounts = () => {
     const [mountsList, setMountsList] = useState<mountModel[]>()
@@ -27,7 +28,10 @@ export const Mounts: React.FC = () => {
 
   return (
     <div>
-        <ul className='users-list'>
+        <div className='mounts-title'>
+            <h1>Montures :</h1>
+        </div>
+        <ul className='mounts-list'>
             {mountsList?.map(mount => (
                 <li key={mount._id} onClick={() => navigate(`/${mount._id}`)}>
                     {mount.name}
