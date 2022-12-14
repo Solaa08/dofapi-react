@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { mountModel } from '../interfaces/mountModel';
@@ -33,7 +32,7 @@ const Mount = () => {
 const { id } = useParams<PostParams>()
 const oneMount = useMount(id)
 const mountsList = useMounts()
-console.log(oneMount?.statistics)
+console.log(oneMount)
 
 if(!oneMount) return null
     return (
@@ -42,6 +41,7 @@ if(!oneMount) return null
           <h1>Détail de la monture</h1>
           <h1>Publication n°{oneMount._id}</h1>
           <h2>Titre : {oneMount.name}</h2>
+          {/* <img src={oneMount.imgUrl}/> img not working with this api need to find something else */}
           <p>Stats</p>
           <Link style={{ textDecoration: 'none', fontSize: 'x-large'}} to="/">Page d'accueil</Link>
       </div>
